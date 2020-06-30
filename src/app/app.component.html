@@ -3,8 +3,12 @@
   <p>Demo Qr Code</p>
 
   <br>
-  <div class="qr-code">
-    <ngx-qrcode [elementType]="elementType" [value]="value" cssClass="aclass" errorCorrectionLevel="L">
-    </ngx-qrcode>
+  <div id='divQr'>
+    <qrcode #qrcode [qrdata]="dataStringQrCode" [width]="800" [elementType]="img"
+      [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
+  <div>
+    <a href="{{linkQrCode}}" target="_blank" download="QrCode-Name">
+      <button class="btn btn-info" (click)='downloadQrCode()'>Download</button></a>
   </div>
 </div>
